@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Notions.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,14 @@ namespace Notions.Controllers
 {
     public class HomeController : Controller
     {
+        //Create the context to avoid having to use "using" statements
+        BlogPostContext db = new BlogPostContext();
+
+        // GET: BlogPost
         public ActionResult Index()
         {
+            //List of 3 posts for homepage
+            ViewBag.ShortPostList = db.BlogPosts.OrderByDescending(p => p.Created).ToList().Take(3);
             return View();
         }
 

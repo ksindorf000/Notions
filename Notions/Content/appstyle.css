@@ -1,0 +1,10 @@
+﻿.text-box {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    height: 20%;
+}
+
+.post-subtitle {
+    color: lightgrey;
+    font-weight: 500;
+}

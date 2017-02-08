@@ -28,6 +28,7 @@ namespace Notions
                       "~/Content/clean-blog.css",
                       "~/Content/font-awesome.css",
                       "~/Content/clean-blog.min.css",
+                      "~/Content/appstyle.css",
                       "~/Content/font-awesome.min.css"));
         }
     }

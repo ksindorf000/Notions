@@ -1,68 +1,35 @@
 ﻿@model Notions.Models.BlogPost
-    @{ var imgSrc = Html.DisplayTextFor(model => model.ImgUrl); }
+@{ var imgSrc = Html.DisplayTextFor(model => model.ImgUrl); }
 
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('@imgSrc')">
+<header class="intro-header text-center" style="background-image: url('@imgSrc')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>Man must explore, and this is exploration at its greatest</h1>
-                    <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
-                    <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
+                <div class="post-heading text-box">
+                    <h1>@Html.DisplayFor(model => model.Title)</h1>
+                    <h2 class="subheading">@Html.DisplayFor(model => model.TeaserText)</h2>
+                    <span class="meta">Posted on @Html.DisplayFor(model => model.Created)</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
-<div>
-    <h4>BlogPost</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Body)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Body)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TeaserText)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TeaserText)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImgUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImgUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Created)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Created)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>
+                    @Html.DisplayFor(model => model.Body)
+                </p>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </div>
+    </div>
+</article>
