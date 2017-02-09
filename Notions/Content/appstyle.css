@@ -8,3 +8,13 @@
     color: lightgrey;
     font-weight: 500;
 }
+
+.form-control {
+    width: 60%;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, .65);
+}
+
+.form-group {
+    margin-left: 30%;
+}

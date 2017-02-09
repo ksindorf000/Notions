@@ -1,7 +1,9 @@
 ﻿using Notions.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -48,5 +50,35 @@ namespace Notions.Controllers
             BlogPost blog = db.BlogPosts.First(b => b.Id == id);
             return View(blog);
         }
+
+        // GET: Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            BlogPost blogPost = db.BlogPosts.Find(id);
+            if (blogPost == null)
+            {
+                return HttpNotFound();
+            }
+            return View(blogPost);
+        }
+
+        // POST: Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Title,Body,TeaserText,ImgUrl")] BlogPost blogPost)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(blogPost).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(blogPost);
+        }
+
     }
 }
