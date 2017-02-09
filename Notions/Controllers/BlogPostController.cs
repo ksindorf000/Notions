@@ -17,8 +17,8 @@ namespace Notions.Controllers
         // GET: BlogPost
         public ActionResult Index()
         {
-            //List of 3 posts for homepage
-            ViewBag.ShortPostList = db.BlogPosts.OrderByDescending(p => p.Created).ToList().Take(3);
+            //All blog posts
+            ViewBag.PostList = db.BlogPosts.OrderByDescending(p => p.Created).ToList();
             return View();
         }
 
@@ -69,10 +69,11 @@ namespace Notions.Controllers
         // POST: Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Body,TeaserText,ImgUrl")] BlogPost blogPost)
+        public ActionResult Edit([Bind(Include = "Id,Title,TeaserText,Body,Author,ImgUrl")] BlogPost blogPost)
         {
             if (ModelState.IsValid)
             {
+                blogPost.Created = DateTime.Now;
                 db.Entry(blogPost).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

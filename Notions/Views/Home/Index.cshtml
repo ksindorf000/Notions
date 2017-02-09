@@ -1,44 +1,43 @@
 ﻿<!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>Clean Blog</h1>
                     <hr class="small">
-                    <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                    <h1>WELCOME</h1>   
+                    <hr class="small">                 
                 </div>
             </div>
         </div>
     </div>
 </header>
+<hr class="hr-med" />
 
-<!-- Main Content -->
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             @foreach (var blogPost in ViewBag.ShortPostList)
             {
-            <div class="post-preview">
-                <h2 class="post-title">
-                    @Html.ActionLink((string)blogPost.Title, "Details", "BlogPost", new { id = blogPost.Id }, null)
-                </h2>
-                <h3 class="post-subtitle">
-                    @blogPost.TeaserText
-                </h3>
-                <p class="post-meta">Posted on @blogPost.Created</p>
-            </div>
-            <hr>
+                <div class="post-preview">
+                    <h2 class="post-title">
+                        @Html.ActionLink((string)blogPost.Title, "Details", "BlogPost", new { id = blogPost.Id }, null)
+                    </h2>
+                    <h3 class="post-subtitle">
+                        @blogPost.TeaserText
+                    </h3>
+                    <p class="post-meta">Posted by @blogPost.Author on @blogPost.Created</p>
+                </div>
+                <hr>
             }
             <!-- Pager -->
             <ul class="pager">
                 <li class="next">
-                    <a href="#">Older Posts &rarr;</a>
+                    <a href="@Url.Action("Index", "BlogPost")" class="btn btn-default"><span class="glyphicon glyphicon-list"></span> All Posts</a>
                 </li>
             </ul>
         </div>
     </div>
 </div>
 
-<hr>

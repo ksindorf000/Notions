@@ -11,7 +11,7 @@
                 <div class="post-heading text-box">
                     <h1>@Html.DisplayFor(model => model.Title)</h1>
                     <h2 class="subheading">@Html.DisplayFor(model => model.TeaserText)</h2>
-                    <span class="meta">Posted on @Html.DisplayFor(model => model.Created)</span>
+                    <span class="meta">Posted by @Html.DisplayFor(model => model.Author) on @Html.DisplayFor(model => model.Created)</span>
                 </div>
             </div>
         </div>
@@ -26,11 +26,11 @@
                 <p>
                     @Html.DisplayFor(model => model.Body)
                 </p>
+                <p>
+                    <a href="@Url.Action("Edit", "BlogPost", new { id = Model.Id })"  class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="@Url.Action("Index", "BlogPost")" class="btn btn-default"><span class="glyphicon glyphicon-list"></span></a>
+                </p>
             </div>
-            <p>
-                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-                @Html.ActionLink("Back to List", "Index")
-            </p>
         </div>
     </div>
 </article>

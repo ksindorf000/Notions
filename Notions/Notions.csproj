@@ -141,6 +141,10 @@
     <Compile Include="Migrations\201702082023591_AddedTeaserTextAndImgUrl.Designer.cs">
       <DependentUpon>201702082023591_AddedTeaserTextAndImgUrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702090503593_AddedAuthor.cs" />
+    <Compile Include="Migrations\201702090503593_AddedAuthor.Designer.cs">
+      <DependentUpon>201702090503593_AddedAuthor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BlogPost.cs" />
     <Compile Include="Models\Tag.cs" />
@@ -220,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702082023591_AddedTeaserTextAndImgUrl.resx">
       <DependentUpon>201702082023591_AddedTeaserTextAndImgUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702090503593_AddedAuthor.resx">
+      <DependentUpon>201702090503593_AddedAuthor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
