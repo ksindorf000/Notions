@@ -16,7 +16,7 @@ namespace Notions.Controllers
         public ActionResult Index()
         {
             //List of 3 posts for homepage
-            ViewBag.ShortPostList = db.BlogPosts.OrderByDescending(p => p.Created).ToList().Take(3);
+            ViewBag.ShortPostList = db.BlogPosts.OrderBy(p => p.Created).ToList().Take(3);
             return View();
         }
 

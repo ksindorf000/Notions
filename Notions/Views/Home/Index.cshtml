@@ -24,7 +24,7 @@
                     <h2 class="post-title">
                         @Html.ActionLink((string)blogPost.Title, "Details", "BlogPost", new { id = blogPost.Id }, null)
                     </h2>
-                    <h3 class="post-subtitle">
+                    <h3>
                         @blogPost.TeaserText
                     </h3>
                     <p class="post-meta">Posted by @blogPost.Author on @blogPost.Created</p>

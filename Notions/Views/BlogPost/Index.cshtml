@@ -1,6 +1,6 @@
 ﻿<!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: 
+<header class="intro-header" style="background-image:
     url('http://www.limeade.com/content/uploads/2016/09/iStock_000005468594_Full.jpg')">
     <div class="container">
         <div class="row">
@@ -15,21 +15,24 @@
     </div>
 </header>
 <div class="subheading text-center">
-    "It's amazing what ordinary people can do if they set out without preconceived notions." - Ben Stein 
+    "It's amazing what ordinary people can do if they set out without preconceived notions." - Ben Stein
 </div>
 <hr class="hr-med" />
 
 <!-- Main Content -->
 <div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="row">        
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">            
+            <div class="float-right">
+                <a href="@Url.Action("Create", "BlogPost")" class="btn btn-danger"><span class="glyphicon glyphicon-plus"></span></a>
+            </div>
             @foreach (var blogPost in ViewBag.PostList)
             {
                 <div class="post-preview">
                     <h2 class="post-title">
                         @Html.ActionLink((string)blogPost.Title, "Details", "BlogPost", new { id = blogPost.Id }, null)
                     </h2>
-                    <h3 class="post-subtitle">
+                    <h3>
                         @blogPost.TeaserText
                     </h3>
                     <p class="post-meta">Posted by @blogPost.Author on @blogPost.Created</p>
@@ -38,10 +41,10 @@
             }
             <!-- Pager -->
             @*<ul class="pager">
-                <li class="next">
-                    <a href="#">Older Posts &rarr;</a>
-                </li>
-            </ul>*@
+                    <li class="next">
+                        <a href="#">Older Posts &rarr;</a>
+                    </li>
+                </ul>*@
         </div>
     </div>
 </div>
