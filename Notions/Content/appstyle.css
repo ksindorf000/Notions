@@ -12,8 +12,8 @@
 
 .form-control {
     width: 60%;
-    color: whitesmoke;
-    background-color: rgba(0, 0, 0, .65);
+    color: #000;
+    background-color: rgba(0, 0, 0, .15);
 }
 
 .form-group {
