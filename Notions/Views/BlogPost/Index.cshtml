@@ -21,9 +21,9 @@
 
 <!-- Main Content -->
 <div class="container">
-    <div class="row">        
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">            
-            <div class="float-right">
+    <div class="row">     
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="float-right">                
                 <a href="@Url.Action("Create", "BlogPost")" class="btn btn-danger"><span class="glyphicon glyphicon-plus"></span></a>
             </div>
             @foreach (var blogPost in ViewBag.PostList)
@@ -35,7 +35,7 @@
                     <h3>
                         @blogPost.TeaserText
                     </h3>
-                    <p class="post-meta">Posted by @blogPost.Author on @blogPost.Created</p>
+                    <p class="post-meta">Posted on @blogPost.Created</p>
                 </div>
                 <hr>
             }

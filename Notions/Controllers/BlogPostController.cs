@@ -18,7 +18,9 @@ namespace Notions.Controllers
         public ActionResult Index()
         {
             //All blog posts
-            ViewBag.PostList = db.BlogPosts.OrderBy(p => p.Created).ToList();
+            ViewBag.PostList = db.BlogPosts
+                .OrderByDescending(p => p.Created)
+                .ToList();
             return View();
         }
 

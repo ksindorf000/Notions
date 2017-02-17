@@ -13,21 +13,23 @@
         </div>
     </div>
 </header>
-<hr class="hr-med" />
 
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <h3>Recent Posts</h3>
+            <hr class="hr-med" />
+            <br/>
             @foreach (var blogPost in ViewBag.ShortPostList)
             {
                 <div class="post-preview">
-                    <h2 class="post-title">
+                    <h4 class="post-title">
                         @Html.ActionLink((string)blogPost.Title, "Details", "BlogPost", new { id = blogPost.Id }, null)
-                    </h2>
-                    <h3>
+                    </h4>
+                    <p>
                         @blogPost.TeaserText
-                    </h3>
-                    <p class="post-meta">Posted by @blogPost.Author on @blogPost.Created</p>
+                    </p>
+                    <p class="post-meta">Posted on @blogPost.Created</p>
                 </div>
                 <hr>
             }
